@@ -8,31 +8,96 @@
     <title>CODES</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
 </head>
 
 <body>
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">CODES</a>
+            <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+            <ul class="navbar-nav px-3">
+              <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Salir</a>
+              </li>
+            </ul>
+          </nav>
+
+    <div class="container-fluid">
+            <div class="row">
+              <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">
+                        <span data-feather="home"></span>
+                        Principal <span class="sr-only">(current)</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span> <!-- icono  --> </span>
+                        PHP
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <span> <!-- icono  --> </span>
+                        JavaScript
+                      </a>
                     </li>
                   </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
+      
+                  <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Saved reports</span>
+                    <a class="d-flex align-items-center text-muted" href="#">
+                      <span data-feather="plus-circle"></span>
+                    </a>
+                  </h6> -->
+                  <ul class="nav flex-column mb-2">
+                    
+                  </ul>
                 </div>
               </nav>
-              
-    <div class="container">
+      
+              <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Inicio</h1>
+                  
+                </div>
+
+                <div class="row">
+                  <div class="col-md-10">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod quae suscipit dolorum cumque recusandae eius odit maxime amet molestias eos magnam ex, earum commodi hic aperiam porro adipisci quidem.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero modi unde repellendus voluptate delectus laboriosam doloremque alias nisi similique cumque voluptatem magni magnam molestias debitis maxime, soluta quidem eligendi nulla!
+                    <div class="">
+<pre class="line-numbers"><code class="language-javascript">console.log("El taxqueño");
+console.log("El taxqueño");</code></pre>
+<pre class="language-javascript line-numbers"><code>
+// Scroll animate
+$('a[href^="#"]').on('click',function (e) {
+  e.preventDefault();
+  var target = this.hash;
+  var $target = $(target);
+  $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+  }, 900, 'swing', function () {
+      window.location.hash = target;
+  });
+});
+</code></pre>
+                    </div>
+                  </div>
+                </div>
+      
+                
+              </main>
+            </div>
+          </div>
+
+    <!-- <div class="container">
         <div class="row">
             <div class="col">
+
                 <pre class="line-numbers language-javascript">
                     <code>
                         console.log("El taxqueño");
@@ -40,13 +105,18 @@
                 </pre>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/prism.js"></script>
+
+    <script src="/assets/js/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
 </body>
 
 </html>
