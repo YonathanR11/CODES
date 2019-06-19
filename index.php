@@ -39,6 +39,11 @@ session_start();
               $_GET["ruta"] == "python" ||
               $_GET["ruta"] == "sql" ||
               $_GET["ruta"] == "inicio" ||
+              $_GET["ruta"] == "git" ||
+              $_GET["ruta"] == "linux" ||
+              $_GET["ruta"] == "arduino" ||
+              $_GET["ruta"] == "cmd" ||
+              $_GET["ruta"] == "bootstrap" ||
               $_GET["ruta"] == "login" ||
               $_GET["ruta"] == "CerrarSesion"
           ) {
@@ -93,14 +98,19 @@ session_start();
         <div class="form-group">
         <label for="lenguaje">Lenguaje</label>
         <select class="custom-select" name="lenguaje" id="lenguaje">
-          <option value="text">Texto</option>
+          <option value="text">TEXTO</option>
           <option value="php">PHP</option>
-          <option value="javascript">Javascript</option>
-          <option value="java">Java</option>
+          <option value="javascript">JAVASCRIPT</option>
+          <option value="java">JAVA</option>
           <option value="sql">SQL</option>
           <option value="html">HTML</option>
           <option value="css">CSS3</option>
-          <option value="python">Python</option>
+          <option value="python">PYTHON</option>
+          <option value="arduino">ARDUINO</option>
+          <option value="bootstrap">BOOTSTRAP</option>
+          <option value="cmd">CMD</option>
+          <option value="git">GIT</option>
+          <option value="linux">LINUX</option>
         </select>
         </div>
         <div class="form-group">
