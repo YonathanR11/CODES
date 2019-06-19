@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `codigos` (
   `codigo` longtext NOT NULL,
   `lenguaje` varchar(50) NOT NULL,
   `estado` int(11) NOT NULL,
+  `creacion` date NOT NULL,
   `usuarios_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_codigos_usuarios_idx` (`usuarios_id`),
@@ -32,16 +33,9 @@ CREATE TABLE IF NOT EXISTS `codigos` (
 
 -- Volcando datos para la tabla codes.codigos: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `codigos` DISABLE KEYS */;
-INSERT INTO `codigos` (`id`, `titulo`, `descripcion`, `codigo`, `lenguaje`, `estado`, `usuarios_id`) VALUES
-	(1, 'Hola', 'hola mundo php', '<?php\r\n\r\necho "Hola mundo";', 'php', 1, 1),
-	(2, 'Segunda', 'nose', '<?php\r\n\r\necho "Hola";\r\n\r\n?>', 'java', 1, 1),
-	(3, 'Hola mundo javascript', 'primero', 'alert( \'Hello, world!\' );', 'javascript', 1, 1),
-	(4, 'hola css', 'segundo', 'body {\r\n			background-color: #2D2D2D;\r\n		}\r\n		\r\n		h1 {\r\n			color: #C26356;\r\n			font-size: 30px;\r\n			font-family: Menlo, Monaco, fixed-width;\r\n		}\r\n		\r\n		p {\r\n			color: white;\r\n			font-family: "Source Code Pro", Menlo, Monaco, fixed-width;\r\n		}', 'css', 1, 1),
-	(5, 'hola java', 'tercero', 'public class HelloWorld {\r\n\r\n    public static void main(String[] args) {\r\n        // Prints "Hello, World" to the terminal window.\r\n        System.out.println("Hello, World");\r\n    }\r\n\r\n}', 'java', 1, 1),
-	(6, 'hola html', 'cuarto', '<html>\r\n<header><title>This is title</title></header>\r\n<body>\r\nHello world\r\n</body>\r\n</html>', 'html', 1, 1),
-	(7, 'hola python', 'quinto', 'print("This line will be printed.")', 'python', 1, 1),
-	(8, 'hola sql', 'sexto', 'SELECT codigos.titulo, codigos.descripcion, codigos.codigo, codigos.lenguaje, \r\n      codigos.estado, us.usuario, us.nombre FROM codigos INNER JOIN usuarios AS us ON \r\n      codigos.usuarios_id=us.id AND lenguaje = \'sql\';', 'sql', 1, 2),
-	(9, 'Hola notas', 'septimo', 'hola xd', 'texto', 1, 1);
+INSERT INTO `codigos` (`id`, `titulo`, `descripcion`, `codigo`, `lenguaje`, `estado`, `creacion`, `usuarios_id`) VALUES
+	(1, 'Hola mundo', 'Hola mundo en javascript', 'console.log(\'Hola mundo con JS\');', 'javascript', 1, '2019-06-19', 2),
+	(2, 'hola texto', 'txt', 'holaaaaaaaaaaaaa', 'text', 1, '2019-06-19', 1);
 /*!40000 ALTER TABLE `codigos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla codes.usuarios
@@ -52,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla codes.usuarios: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
