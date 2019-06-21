@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-success">
-  <a class="navbar-brand" href="inicio" >NOTAS</a>
+  <a class="navbar-brand" href="inicio" >CODES</a>
   <div class="collapse navbar-collapse">
     <div class="navbar-nav mr-auto">
       <li class="nav-item active">
