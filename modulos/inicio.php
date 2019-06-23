@@ -11,7 +11,7 @@ require_once "conexion.php";
           // echo $strLenguaje;
           $coloresLenguaje = array(
             'javascript' => 'background: #F1DA4E; color: black',
-            'text' => 'background: #363942; color: white',
+            'Textile' => 'background: #363942; color: white',
             'sql' => 'background: #E68F07; color: white',
             'git' => 'background: #F05036; color: white',
             'php' => 'background: #767BB3; color: white',
