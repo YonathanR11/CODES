@@ -1,5 +1,5 @@
 <?php
-
+//E54D26
 require_once "conexion.php";
 
   $sql = "SELECT codigos.titulo, codigos.descripcion, codigos.codigo, codigos.lenguaje, 
@@ -12,6 +12,7 @@ require_once "conexion.php";
           <h4 class="card-title">'.$row["titulo"].'</h4>
           <h6 class="card-subtitle mb-2 text-muted">'.$row["descripcion"].'</h6>
           <span class="badge badge-success">'.$row['usuario'].'</span>
+          <span class="badge" style="background: #E54D26; color: white">'.$row['lenguaje'].'</span>
           <span class="badge badge-dark">'.date_format($date, 'd/m/Y').'</span>
           <pre class="language-'.$row["lenguaje"].' line-numbers"><code>'.str_replace("<", "&lt;", $row["codigo"]).'</code></pre>';
         if (isset($_SESSION['usuario']) && $row['usuario'] == $_SESSION['usuario']) {
