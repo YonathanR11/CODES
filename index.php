@@ -105,7 +105,7 @@ session_start();
         <div class="form-group">
         <label for="lenguaje">Lenguaje</label>
         <select class="custom-select" name="lenguaje" id="lenguaje">
-          <option value="text">TEXTO</option>
+          <option value="Textile">TEXTO</option>
           <option value="php">PHP</option>
           <option value="javascript">JAVASCRIPT</option>
           <option value="java">JAVA</option>
@@ -161,7 +161,7 @@ session_start();
                   <div class="col-sm-3 my-1">
                       <label for="lenguaje">Lenguaje</label>
                       <select class="custom-select" name="lenguajeEdit" id="lenguajeEdit">
-                        <option value="text">TEXTO</option>
+                        <option value="Textile">TEXTO</option>
                         <option value="php">PHP</option>
                         <option value="javascript">JAVASCRIPT</option>
                         <option value="java">JAVA</option>

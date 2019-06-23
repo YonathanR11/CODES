@@ -24,6 +24,18 @@ require_once "conexion.php";
             'linux' => 'background: black; color: #2CF334',
             'python' => 'background: #FFD140; color: black'            
            );
+
+           switch ($row["lenguaje"]) {
+             case 'bootstrap':
+             $row["lenguaje"] = "html";
+               break;
+             case 'linux':
+             $row["lenguaje"] = "Batch";
+               break;
+             case 'cmd':
+             $row["lenguaje"] = "Batch";
+               break;
+           }
           
           echo '<div class="card m-3">
             <div class="card-body">

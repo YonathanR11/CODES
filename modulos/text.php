@@ -4,7 +4,7 @@ require_once "conexion.php";
 
   $sql = "SELECT codigos.id as idCode, codigos.titulo, codigos.descripcion, codigos.codigo, codigos.lenguaje, 
   codigos.estado, codigos.creacion, us.usuario, us.nombre FROM codigos INNER JOIN usuarios AS us ON 
-  codigos.usuarios_id=us.id AND lenguaje = 'text';";
+  codigos.usuarios_id=us.id AND lenguaje = 'Textile';";
     foreach (Conexion::conectar()->query($sql) as $row) {
         $date = date_create($row['creacion']);
         echo '<div class="card m-3">
