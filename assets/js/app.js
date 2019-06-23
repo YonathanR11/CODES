@@ -25,7 +25,7 @@ $(document).on("click", ".EditarCode", function () {
                 theme: "darcula"
             });
             editor.refresh();
-            setTimeout('saludo()', 100);
+            setTimeout('saludo()', 200);
         },
         error: function (respuesta) {
             console.table(respuesta);
