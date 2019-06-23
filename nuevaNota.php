@@ -8,7 +8,7 @@ if (isset($_POST['titulo'])) {
         VALUES (:titulo, :descripcion, :codigo, :lenguaje, :estado, :creacion, :usuarios_id)");
 
     $estado = 1;
-    $creacion = date("y") . "-" . date("m") . "-" . date("d");;
+    $creacion = date("y") . "-" . date("m") . "-" . date("d");
     $id = $_SESSION['id'];
     $stmt->bindParam(":titulo", $_POST['titulo'], PDO::PARAM_STR);
     $stmt->bindParam(":descripcion", $_POST['descripcion'], PDO::PARAM_STR);

@@ -1,7 +1,7 @@
 <!-- <div class="container"> -->
-    <div class="row justify-content-center align-items-center" style="height:50vh">
+    <div class="row justify-content-center align-items-center mt-5" >
         <!-- <div class="col-4"> -->
-            <div class="card w-25">
+            <div class="card">
                 <div class="card-body">
                     <form method="post" novalidate="" action="modulos/ctrLogin.php" autocomplete="off">
                         <div class="form-group">
@@ -12,7 +12,7 @@
                         <label for="pass">Contraseña</label>
                             <input type="password" id="pass" class="form-control" name="password">
                         </div>
-                        <button type="summit" id="sendlogin" class="btn btn-primary btn-block">login</button>
+                        <button type="summit" id="sendlogin" class="btn btn-primary btn-block">Entrar</button>
                     </form>
                 </div>
             </div>

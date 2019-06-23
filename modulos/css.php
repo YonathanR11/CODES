@@ -2,7 +2,7 @@
 
 require_once "conexion.php";
 
-  $sql = "SELECT codigos.titulo, codigos.descripcion, codigos.codigo, codigos.lenguaje, 
+  $sql = "SELECT codigos.id as idCode, codigos.titulo, codigos.descripcion, codigos.codigo, codigos.lenguaje, 
   codigos.estado, codigos.creacion, us.usuario, us.nombre FROM codigos INNER JOIN usuarios AS us ON 
   codigos.usuarios_id=us.id AND lenguaje = 'css';";
     foreach (Conexion::conectar()->query($sql) as $row) {
@@ -16,7 +16,7 @@ require_once "conexion.php";
           <span class="badge badge-dark">'.date_format($date, 'd/m/Y').'</span>
           <pre class="language-'.$row["lenguaje"].' line-numbers"><code>'.str_replace("<", "&lt;", $row["codigo"]).'</code></pre>';
         if (isset($_SESSION['usuario']) && $row['usuario'] == $_SESSION['usuario']) {
-            echo'<a href="#!" class="btn btn-warning">Editar</a>';
+          echo '<button type="button" class="btn btn-warning EditarCode" idCode='.$row["idCode"].' data-toggle="modal" data-target="#ModalEditar"  data-controls-modal="ModalEditar" data-backdrop="static" data-keyboard="false">Editar</button>';
             echo'<a href="#!" class="btn btn-danger ml-1">Borrar</a>';
         }
         echo '</div>
