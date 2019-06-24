@@ -89,7 +89,7 @@ $(document).on("click", ".DeleteCode", function () {
 
     swalWithBootstrapButtons.fire({
         title: '¿Eliminar?',
-        text: "¡Esta accion no se puede revertir! ID: " + idcodeDelete,
+        text: "¡Esta accion no se puede revertir!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Si, eliminar!',
