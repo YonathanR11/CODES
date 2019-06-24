@@ -42,7 +42,7 @@
       <a class="nav-link" href="bootstrap">BOOTSTRAP <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-      <a class="nav-link" href="text">TEXTO <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="Textile">TEXTO <span class="sr-only">(current)</span></a>
       </li>
     </div>
     <!-- <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#ModalNuevaNota">NUEVA NOTA </button>
