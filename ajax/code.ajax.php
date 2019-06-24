@@ -3,6 +3,7 @@ include "../modulos/conexion.php";
 $idcodeEdit;
 $idcodeEditNew;
 $CodeNew;
+$idcodeDelete;
 
 if (isset($_POST["idcodeEdit"])) {
     $editar = new AjaxCode();
@@ -15,6 +16,12 @@ if (isset($_POST["idcodeEditSave"])) {
     $editar->idcodeEditNew = $_POST["idcodeEditSave"];
     $editar->CodeNew = $_POST["codigoEditOK"];
     $editar->EditarCode();
+}
+
+if (isset($_POST["idcodeDelete"])) {
+    $editar = new AjaxCode();
+    $editar->idcodeDelete = $_POST["idcodeDelete"];
+    $editar->EliminarCode();
 }
 
 class AjaxCode
@@ -49,7 +56,18 @@ class AjaxCode
             echo false;
 
         }
-        // $res = $stmt->fetch();
+    }
+
+    public function EliminarCode()
+    {
+        $valor = $this->idcodeDelete;
+        $tabla = "codigos";
+        $item = "id";
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE $item = :$item");
+        $stmt->bindParam(":" . $item, $valor, PDO::PARAM_INT);
+        $stmt->execute();
+        $res = $stmt->fetch();
         // echo json_encode($res);
+        echo true;
     }
 }

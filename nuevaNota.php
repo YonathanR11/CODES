@@ -19,7 +19,7 @@ if (isset($_POST['titulo'])) {
     $stmt->bindParam(":usuarios_id", $id, PDO::PARAM_INT);
 
     if ($stmt->execute()) {
-        echo '<script> window.location = "../'.$_POST['lenguaje'].'"; </script>';
+        echo '<script> window.location = "'.$_POST['lenguaje'].'"; </script>';
     } else {
         echo "ERROR: ".$_SESSION['nombre']." - ".print_r($stmt->errorInfo()). " <br><br><hr><h1>¡Error! :(</h1>";
     }

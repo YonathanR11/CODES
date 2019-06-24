@@ -57,7 +57,15 @@ $(document).on("click", ".SaveEditCode", function () {
         dataType: "json",
         success: function (respuesta) {
             if (respuesta) {
-                location.reload();
+                Swal.fire({
+                    position: 'top',
+                    type: 'success',
+                    title: 'Editado Correctamente!',
+                    showConfirmButton: false,
+                    timer: 1800
+                }).then((result) => {
+                    location.reload();
+                });
             }
         },
         error: function (respuesta) {
@@ -67,3 +75,71 @@ $(document).on("click", ".SaveEditCode", function () {
     });
 });
 
+$(document).on("click", ".DeleteCode", function () {
+    var idcodeDelete = $(this).attr("idCode");
+    var datos = new FormData();
+    datos.append("idcodeDelete", idcodeDelete);
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false,
+    })
+
+    swalWithBootstrapButtons.fire({
+        title: '¿Eliminar?',
+        text: "¡Esta accion no se puede revertir! ID: " + idcodeDelete,
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, eliminar!',
+        cancelButtonText: 'No, cancelar!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url: "ajax/code.ajax.php",
+                method: "POST",
+                data: datos,
+                cache: false,
+                contentType: false,
+                processData: false,
+                dataType: "json",
+                success: function (respuesta) {
+                    Swal.fire({
+                        position: 'top',
+                        type: 'success',
+                        title: '¡Eliminado Correctamente!',
+                        showConfirmButton: false,
+                        timer: 1800
+                    }).then((result) => {
+                        location.reload();
+                    });
+                },
+                error: function (respuesta) {
+                    console.table(respuesta);
+                    alert("ERROR: " + respuesta["statusText"] + "\nCODIGO: " + respuesta["status"] + "\n\n" + respuesta["responseText"]);
+                    Swal.fire({
+                        type: "error",
+                        title: "¡Error!",
+                        text: "¡No se pudo eliminar el codigo! Intenta de nuevo!",
+                        showConfirmButton: true,
+                        confirmButtonText: "Cerrar"
+                    }).then((result) => {
+                        if (result.value) {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        } else if (
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire(
+                'Cancelado',
+                'El codigo no se elimino.',
+                'error'
+            )
+        }
+    })
+});

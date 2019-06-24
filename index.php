@@ -40,7 +40,7 @@ session_start();
               $_GET["ruta"] == "javascript" ||
               $_GET["ruta"] == "php" ||
               $_GET["ruta"] == "css" ||
-              $_GET["ruta"] == "text" ||
+              $_GET["ruta"] == "Textile" ||
               $_GET["ruta"] == "java" ||
               $_GET["ruta"] == "html" ||
               $_GET["ruta"] == "python" ||
@@ -78,6 +78,7 @@ session_start();
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/prism.js"></script>
   <script src="assets/js/all.min.js"></script>
+  <script src="assets/js/sweetalert2.all.min.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 
